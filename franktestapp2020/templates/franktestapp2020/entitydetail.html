@@ -1,0 +1,8 @@
+<h1>{{ Entity.entity_name }}</h1>
+<ul>
+    {% for yearlydata in yearlydata_list %}
+        <li>
+            {{yearlydata.id}}, {{yearlydata.entity }}, {{yearlydata.year }}, {{yearlydata.revenues }}, {{yearlydata.people }}
+        </li>
+    {% endfor %}
+    </ul>

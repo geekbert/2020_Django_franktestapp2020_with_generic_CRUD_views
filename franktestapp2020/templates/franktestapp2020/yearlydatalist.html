@@ -1,0 +1,16 @@
+  
+
+    <H1> yearlydata view (refers to other yearlydateview function in views.py) </H1>
+    {% if yearlydata_list %}
+        <ul>
+        {% for yearlydata in yearlydata_list %}
+            <li>
+                {{yearlydata.id}}, {{yearlydata.entity }}, {{yearlydata.year }}, {{yearlydata.revenues }}, {{yearlydata.people }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No yearlydata available</p>
+    {% endif %}
+
+     

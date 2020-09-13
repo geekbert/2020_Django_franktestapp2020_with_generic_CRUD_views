@@ -1,0 +1,15 @@
+<h1>yearlydata Table List</h1>  
+{% if yearlydata_list %}
+    <ul>
+    {% for yearlydata in yearlydata_list %}
+        <li><a href="/franktestapp2020/yearlydata-detail/{{ yearlydata.id }}/">{{ yearlydata.id}}</a> {{yearlydata.entity }}
+            ,{{yearlydata.year }}, {{yearlydata.people }}, {{yearlydata.revenues }}
+            (<a href="{% url 'yearlydataupdateform' yearlydata.id %}">Update</a> |
+            <a href="{% url 'yearlydatadeleteform' yearlydata.id %}">Delete</a>))
+        </li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No yearlydata available.</p>
+{% endif %}

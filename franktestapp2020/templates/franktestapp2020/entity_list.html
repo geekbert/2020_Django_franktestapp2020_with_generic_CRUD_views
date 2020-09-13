@@ -1,0 +1,15 @@
+<h1>Entity Table List</h1>  
+{% if entity_list %}
+    <ul>
+    {% for entity in entity_list %}
+        <li><a href="/franktestapp2020/{{ entity.id }}/">{{ entity.id}}</a> {{entity.entity_name }}
+        (<a href="{% url 'entityupdateform' entity.id %}">Update</a> |
+        <a href="{% url 'entitydeleteform' entity.id %}">Delete</a>)</li>
+    {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No entities are available.</p>
+{% endif %}
+
+

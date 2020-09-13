@@ -1,0 +1,85 @@
+
+ 
+
+<body>
+
+    <!--div>
+
+    <H1> yearlydata view (refers to other views.py function) </H1>
+
+    {% if yearlydata_list %}
+    
+        <ul>
+        {% for yearlydata in yearlydata_list %}
+    
+            <li>
+                {{yearlydata.id}}, {{yearlydata.entity }}, {{yearlydata.year }}, {{yearlydata.revenues }}, {{yearlydata.people }}
+    
+            </li>
+        {% endfor %}
+        </ul>
+    
+    {% else %}
+        <p>No yearlydata available</p>
+    {% endif %}
+
+    </div-->
+
+  <hr>
+    <H1> yearlydata form - problem: can't combine iteration over read data with entry form on same page?</H1>
+
+
+
+    <form action="yearlydataform" method="post">
+    {% csrf_token %}
+
+    {% for yearlydata in form %}
+
+    <li>
+        {{ yearlydata.id}} {{yearlydata.entity }}
+
+        
+        {% comment %}
+        (<a href="{% url 'yearlydataform:YearUpdate' yearlydata.id %}">Update</a> |
+        {% endcomment %}
+        
+        
+        <!--label for="year">Year: </label><input id="year" type="number" name="year" value="{{ yearlydata.year }}">
+        <input type="submit" value="OK">
+        <label for="revenues">Revenues: </label><input id="Revenues" type="number" name="Revenues" value="{{ yearlydata.revenues }}">
+        <input type="submit" value="OK">
+        <label for="people">People: </label><input id="People" type="number" name="People" value="{{ yearlydata.people }}">
+        <input type="submit" value="OK"-->, 
+         
+
+    </li>
+
+    <!--input type="submit" value="Submit"--> 
+
+    {% endfor %}
+
+    </form>
+
+    
+
+   
+
+
+<H1> yearlydata form - this part works fine except it creates entry every time website is refreshed without entering data</H1-->
+
+<form action="yearlydataform" method="post">
+    {% csrf_token %}
+<table>
+    {{form.as_table}}
+   
+ </table>
+  <input type="submit" value="Submit">
+  <input type="submit" onclick="window.location='{% url 'entity-list' %}' ; return false;" value="Cancel / Back to Index">
+   
+</form-->
+
+
+<hr>
+
+
+</body>

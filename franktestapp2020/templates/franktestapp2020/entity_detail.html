@@ -1,0 +1,17 @@
+
+ 
+<h1>{{ object }}</h1> <!-- shorthand in generic views/forms referring to name-->
+<p>
+<a href="{% url 'entity-list' %}">Go back to list</a>
+</p>
+
+
+<h1>{{ entity }}</h1> <!-- works -->
+ 
+<ul>
+    {% for yearlydata in related_yearlydata_list %}
+        <li>
+            {{yearlydata.id}}, {{yearlydata.entity }}, {{yearlydata.year }}, {{yearlydata.revenues }}, {{yearlydata.people }}
+        </li>
+    {% endfor %}
+</ul>

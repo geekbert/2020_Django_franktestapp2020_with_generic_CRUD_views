@@ -1,0 +1,20 @@
+<!--h1>Entity - this not work {{ Entity.entity_name }}</h1-->
+<h1>Foreign Key for yearlydata detail: (Same as Entity PK): {{ object }}</h1> <!-- shorthand in generic views/forms referring to name-->
+<p>
+<a href="{% url 'yearlydata-list' %}">Go back to list</a>
+</p>
+ 
+ 
+    <h1>yearlydata Detail</h1>  
+    {% if yearlydata_detail %}
+        <ul>
+        {% for yearlydata in yearlydata_detail %}
+            <li> {{ yearlydata.id}}, {{yearlydata.entity }}
+                ,{{yearlydata.year }}, {{yearlydata.people }}, {{yearlydata.revenues }}
+            </li>
+        {% endfor %}
+        </ul>
+    
+    {% else %}
+        <p>No yearlydata available.</p>
+    {% endif %}
