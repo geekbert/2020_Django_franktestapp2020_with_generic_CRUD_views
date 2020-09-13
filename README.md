@@ -1,0 +1,1 @@
+# 2020_Django_franktestapp2020_with_generic_CRUD_views
