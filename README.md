@@ -1,3 +1,6 @@
+# GIT HUB DOWNLOAD PROCESS
+If Windows Directory empty: 3 git clone https://github.com/geekbert/ARISRepositoryAPI.git (Cloning into existing directory only allowed if directory is empty) 
+
 # GIT HUB GENERIC SYNC PROCESS
 
 1 on Windows, download and install Git 
